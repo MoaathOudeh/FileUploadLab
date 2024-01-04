@@ -21,7 +21,7 @@ $uploadOk = true;
 if($files["name"] != ""){
   $target_dir = "uploads/lvl11/" . $files["name"];
   $extension = strtolower(pathinfo($target_dir,PATHINFO_EXTENSION));
-  if($extension == "php" || $extension == "phtml"){
+  if($extension == "php"){
     echo "sorry!!! but php files are not allowed!\n";
     $uploadOk = false;
   }

@@ -20,7 +20,7 @@ $uploadOk = true;
 if($files["name"] != ""){ 
   $target_dir = urldecode("uploads/lvl10/" . $files["name"]);
   if(strpos($target_dir, ".htaccess")){
-    echo "The upload if .htaccess files is prohibited.";
+    echo "The upload of .htaccess files is prohibited.";
     $uploadOk = false;
     http_response_code(403);
   }

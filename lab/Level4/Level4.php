@@ -16,7 +16,7 @@
 <?php
 $files = $_FILES["fileToUpload"];
 $info = new SplFileInfo($files["name"]);
-$extention = strtolower($info->getExtension());
+$extension = strtolower($info->getExtension());
 $uploadOk = true;
 if($files["name"] != ""){
   $target_dir = "uploads/lvl4/" . $files["name"];
@@ -24,12 +24,12 @@ if($files["name"] != ""){
     echo "Sorry, can't accept php files!\n";
     $uploadOk = false;
   }
-  if($uploadOk && $extention == "php5" && move_uploaded_file($files["tmp_name"],$target_dir)){
+  if($uploadOk && $extension == "php5" && move_uploaded_file($files["tmp_name"],$target_dir)){
     echo "this Level is only for PoC. Most servers dont include other php extensions by default. Its just still worth trying since one can get lucky :)";
     echo "<br>";
     echo "<a href='$target_dir'>uploaded image!</a>";
   }
-  if($uploadOk && ($extention == "png" || $extention == "jpeg") && move_uploaded_file($files["tmp_name"],$target_dir)){
+  if($uploadOk && ($extension == "png" || $extension == "jpeg") && move_uploaded_file($files["tmp_name"],$target_dir)){
     echo "<a href='$target_dir'>uploaded image!</a>";
   }
 }
